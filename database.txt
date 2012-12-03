@@ -1,0 +1,72 @@
+sqlite3:
+
+.tables: show all tables in the database
+
+.schema tablename: show table description
+
+.show .separator;
+
+.separator "\t"
+
+.import similarSequences.txt SimilarSequences
+
+
+
+
+PostgreSQL:
+
+Install:
+./configure --prefix=/somewhere/postgresql
+make
+make install
+
+Need to initialize a directory where PostgreSQL stores its data:
+mkdir /somewhere/postgresql/data
+/somewhere/postgresql/bin/initdb -D /somewhere/postgresql/data
+
+To start PostgreSQL:
+/somewhere/postgresql/bin/postmaster -D /somewhere/postgresql/data or /somewhere/postgresql/bin/postgres -D /somewhere/postgresql/data
+
+To create a new database:
+/somewhere/postgresql/bin/createdb dbname
+
+To connect to a database in command line:
+/somewhere/postgresql/bin/psql -d dbname
+
+# List databases from command line:
+psql -l
+
+list tables: \d
+list databases: \l
+
+# Delete a database:
+dropdb db_name
+
+# desc table, in postgresql prompt
+\d table_name
+
+# dump a table from a database
+pg_dump -t 'table_name' db_name > dump.sql
+
+# import a sql file to a database
+psql -f dump.sql -d db_name
+
+
+
+MySQL:
+
+#Install as non-root user:
+1. Download tar.gz file distribution from mysql.com and explode to a directory, i.e., /home/wzhang7/software, uncompress
+2. Enter into that folder, execute ./scripts/mysql_install_db --user=wzhang7 --basedir=/home/wzhang7/software/mysql-5.5.28
+--datadir=/home/wzhang7/software/mysql-5.5.28/data
+3. Create a my.cnf file somewhere, i.e., /home/wzhang7/my.cnf, and add the following content
+      [server]
+      user=wzhang7
+      basedir=/home/wzhang7/software/mysql-5.5.28
+      datadir=/home/wzhang7/software/mysql-5.5.28/data
+      socket=/tmp/mysql.sock
+      port=3366
+4. Command to Start: ./bin/mysqld_safe --defaults-file=/home/wzhang7/my.cnf
+5. Command to Stop:  ./bin/mysqladmin --socket=/tmp/mysql.sock shutdown
+
+

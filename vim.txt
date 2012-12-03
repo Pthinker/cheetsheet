@@ -1,0 +1,4 @@
+paste yanked text to vim command line:
+press Ctrl + r then "
+
+

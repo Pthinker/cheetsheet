@@ -1,0 +1,23 @@
+./makeflow_blast 200 100000 -i query.fasta -d db/db.fasta -p blastp -m 8 -e 1e-10 -o blastall.blastp > Makeflow
+
+To get some workers up and running:
+work_queue_pool -T condor -d all -a -N <project_name> <desired_num_workers>
+
+To run your blast using those workers:
+makeflow -T wq -d all -p 9911 -F 3 -a -N <project_name>
+
+To monitor your worker usage:
+watch -d work_queue_status
+
+
+condor_q: check submitted jobs on this machine.
+condor_q -better-analyze
+
+condor_rm -all: remove all submitted jobs on this machine
+
+condor_ssh_to_job job_id
+
+
+
+SGE:
+qstat -u wzhang7

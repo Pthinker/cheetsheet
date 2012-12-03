@@ -1,0 +1,26 @@
+Blast2GO:
+
+    Get your blast results in xml format (I used NCBI's blast+ 2.2.25 suite):
+
+        blastp -query proteins.faa -db nr -outfmt 5 -evalue 1e-3 -max_target_seqs 20 -out proteins.xml
+
+        Install b2g4pipe235 (just tar gunzip it)
+
+            Edit the properties in b2gPipe.properties (Most importantly, change the section on dbname etc to use the settings you would get from the
+            GUI blast2go.
+
+            // Conectivity to WebServices
+            Webservice.url=http://blast2go.bioinfo.cipf.es/b2gws_axis2
+
+            // GO and B2G-Mapping Database
+            Dbacces.dbhost=193.144.127.204
+            Dbacces.dbname=b2g_may10
+            Dbacces.dbuser=blast2go
+            Dbacces.dbpasswd=blast4it
+
+            Run:
+                java -Xms3000m -Xmx8000m -jar blast2go.jar -in proteins.xml -v -a -out MyAnnot -d MyAnnot.dat -p b2gPipe.properties
+
+
+
+formatdb -i input_file -p T

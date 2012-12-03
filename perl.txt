@@ -1,0 +1,7 @@
+install perl modules in local:
+    perl Makefiel.PL PREFIX=local folder
+    make
+    make test
+    make install
+    make clean
+

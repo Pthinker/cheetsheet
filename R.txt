@@ -1,0 +1,59 @@
+You do not need to have root access to a machine to install your own versions of R and your favourite packages there. This is how to do it:
+1. downloaded the tar.gz of the development version of R
+2. uncompress it to a directory you have write access to, say ~/local/R
+3. change into the uncompressed directory, ~/local/R/R-devel
+4. run "./configure"
+5. run "make"
+Afterwards you can start R by executing ~/local/R/R-devel/bin/R; to simplify that either add the bin directory to your path or create an alias for R.
+You do not need to run "make install" to work with R. For packages,
+    1. create a directory in which you want the packages installed, e.g. ~/local/rpacks
+    2. create an evironment variable R_LIBS that holds the path to that directory, e.g. "setenv R_LIBS ${HOME}/local/rpacks" with that directory
+       and a C-shell (use export with a Bash shell). This environment variable tells R where to look first for installed packages and where to 
+       install packages when using "install.packages" or "biocLite". R_LIBS is safe to use, since it only extends the path to look for packages
+       and does not replace the default R library path.
+
+
+
+: is to create a sequence. i.e. 1:20
+
+c() function is to create vectors of bojects. i.e., x<-c("a","b","c")
+
+vector() functions is to create a vector, i.e., x<-vector(numeric, length=10), default to 0.
+
+Every element in a vector need to be in the same class. When different objects are mixed in vector, coerce will happen.
+
+Objects can be explicitly coerced from one class to another using the as.* function if available. Nonsensical coercion results in NAs.
+
+Matrices are vectors with a dimension attribute. The dimension attributes is itself an integer vector of length 2.
+m<-matrix(1:6, nrow=2, ncol=3)
+dim(m)
+attributes(m)
+Matrices are constructed column-wise. Matrices can be created by column-binding or row-binding.
+
+Lists are special type of vector that can contain different classes of elements. i.e., x<-list(1, "a", TRUE)
+
+Missing values are denoted by NA or NaN. is.na() is used to test objects if they are NA, is.nan() is used to test for NaN.
+
+Data frames are used to store tabular data, they are usually created by calling read.table() or read.csv().
+
+read.table, read.csv, for reading tabular data
+readLines, for reading lines of text files
+load, for reading in saved workspaces
+
+file() opens a connection to a file
+gzfile() opens a connection to a file compressed with gzip
+bzfile() ............................................ bzip2
+url() opens a connection to a webpage
+
+getwd() to get the current working directory.
+
+dir() to list files in current working directory.
+
+str() to compactly display the internal structure of an object
+
+vector in R is stored column by column.
+
+ifelse()
+apply()
+rep()
+seq()
