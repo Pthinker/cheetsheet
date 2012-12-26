@@ -1,0 +1,34 @@
+# List Ruby interpretor that are available with rvm
+rvm list
+
+# To install a version
+rvm install version-name
+
+# To use a version
+rvm use version-name
+
+# To remove a version
+rvm remove version-name
+
+# create gemset
+rvm gemset create gemset-name
+
+# list all gemsets
+rvm gemset list
+
+# Use a gemset
+rvm gemset use gemset-name
+
+# export a gemset list
+rvm gemset export file-name
+
+# import a gemset list
+rvm gemset import file-name
+
+# use a gemset in rvm use commands
+rvm use version-name@gemset-name
+
+# list information
+rvm info
+
+

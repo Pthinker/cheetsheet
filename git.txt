@@ -44,3 +44,8 @@ git checkout branch-name
 # Make changes and commit, then push
 git push -u origin branch-name
 
+# Show history code of a file
+git show HEAD~4:./path/to/file
+
+
+

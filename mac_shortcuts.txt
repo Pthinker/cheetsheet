@@ -1,0 +1,7 @@
+Show desktop: command + f3 / fn + f11
+
+close window or tab: command + w
+
+Refresh webpage: command + r
+
+
