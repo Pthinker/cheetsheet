@@ -3,6 +3,11 @@ rvm list
 
 # To install a version
 rvm install version-name
+# If have the following error:
+# The provided compiler '/usr/bin/gcc' is LLVM based, it is not yet fully
+# supported by ruby and gems, please read `rvm requirements`. Then use the
+# following command
+rvm install version-name --with-gcc=clang
 
 # To use a version
 rvm use version-name
@@ -31,4 +36,11 @@ rvm use version-name@gemset-name
 # list information
 rvm info
 
+# To use a specific version rake, i.e. 0.8.7
+rake _0.8.7_ [stuff]
 
+# Update gem
+gem update --system 1.6.2
+
+# Use db:migrate in different environments
+rake db:migrate RAILS_ENV=production
