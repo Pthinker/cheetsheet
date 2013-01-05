@@ -13,31 +13,92 @@ You do not need to run "make install" to work with R. For packages,
        and does not replace the default R library path.
 
 
+Everything in R is object. Atomic classes: numeric, logical, integer, character and complex. Numbers in R is generally treated as numeric objects(double precision real numbers). If you explicitly want an integer, you need to specify the L suffix.
 
-: is to create a sequence. i.e. 1:20
+: is to create an integer sequence. i.e. 1:20
 
-c() function is to create vectors of bojects. i.e., x<-c("a","b","c")
+class() function can get the type of an object, i.e., class(a).
 
-vector() functions is to create a vector, i.e., x<-vector(numeric, length=10), default to 0.
+c() function is to create vectors of ojects. i.e., x<-c("a","b","c")
 
-Every element in a vector need to be in the same class. When different objects are mixed in vector, coerce will happen.
+vector() function is to create a vector, i.e., x<-vector("numeric", length=10), default to 0.
+
+Every element in a vector need to be in the same class. When different objects are mixed in vector, coerce will happen so that every element in the vector is of the same class.
 
 Objects can be explicitly coerced from one class to another using the as.* function if available. Nonsensical coercion results in NAs.
 
-Matrices are vectors with a dimension attribute. The dimension attributes is itself an integer vector of length 2.
+Matrices are vectors with a dimension attribute. The dimension attributes is itself an integer vector of length 2 (nrow, ncol).
 m<-matrix(1:6, nrow=2, ncol=3)
-dim(m)
-attributes(m)
-Matrices are constructed column-wise. Matrices can be created by column-binding or row-binding.
+dim(m) : get the dimension of the matrix
+attributes(m): return the attributes of a matrix.
+Matrices can also be created directly from vectors by adding a dimension attribute.
+m<-1:10
+dim(m) <- c(2, 5)
+Matrices are constructed column-wise. Matrices can be created by column-binding or row-binding with cbind() and rbind().
+a<-1:3
+b<-10:12
+cbind(a, b)
 
-Lists are special type of vector that can contain different classes of elements. i.e., x<-list(1, "a", TRUE)
+Lists are a special type of vector that can contain different classes of elements. i.e., x<-list(1, "a", TRUE)
 
-Missing values are denoted by NA or NaN. is.na() is used to test objects if they are NA, is.nan() is used to test for NaN.
+Factors are used to represent categorical data. One can think of a factor as an integer vector where each integer has a label.
+f=factor(c("yes","no","yes","yes"))
+table(f): get a frequency count of each level in the factor
 
-Data frames are used to store tabular data, they are usually created by calling read.table() or read.csv().
+Missing values are denoted by NA or NaN. is.na() is used to test objects if they are NA, is.nan() is used to test for NaN. A NaN value is also NA, but the reverse is not true.
 
-read.table, read.csv, for reading tabular data
+Data frames are used to store tabular data. They are represented as a special type of list where each element of the list has to have the same length. Each element of the list can be thought of as a column cand the length of each element of the list is the number of rows. Unlike matrices, data frames can store different classes of objects in each column. Data frames have a special attribute called row.names. Data frames are usually created by calling read.table() or read.csv(). Data frames can be converted to a matrix by calling data.matrix() but coverse may happen so each element is of the same class.
+x<-data.frame(col1=1:4. col2=c(T,F,F,T))
+nrow(x):get number of rows
+ncol(x): get number of columns
+
+R objects can have names. 
+x<-1:3
+names(x) <- c("name1", "name2", "name3")
+names(x)
+
+Lists can have names. l <- list(a=1, b=2, c=3)
+names(l)
+
+Matrices can have names:
+m <- matrix(1:4, nrow=2, ncol=2)
+dimnames(m) <- list(c("a", "b"), c("c", "d")) # The first element in the list is row names.
+
+----------------------------------------
+
+[ always returns an object of the same class as the original, can be used to select more than one elements. [[ is used to extract elements of a list or a data framel, it can only be used to extract a single element and the class of the returned object will not necessarily be a list or a data frame. $ is used to extract elements of a list or data frame by name, sementics are similar to that of [[. 
+x <- matrix(1:6, 2, 3)
+x[1, 2]
+x[1, ] # first row of the matrix
+x[, 2] # second column of the matrix
+
+x <- list(foo=1:4, bar=0.6)
+x[1] # a list, [ always return the object with the same class
+x[[1]] # a vector
+
+complete.cases() 
+
+Many operations in R are vectorized making code more efficient, concise, and easier to read.
+
+x <- matrix(1:4, 2, 2)
+y <- matrix(rep(10, 4), 2, 2)
+x * y  # element-wise multiplication
+x %*% y  # true matrix multiplication
+
+----------------------------------------
+
+read.table, read.csv, for reading tabular data (help page of read.table contains many useful hints)
+Use the colClasses argument can make read.table run much faster. If all of the columns are numeric, you can just set colClasses="numeric". A quick and dirty way to figure out the classes of each column is the following:
+iniital <- read.table("datatable.txt", nrows=100)
+classes <- sapply(initial, class)
+tabAll <- read.table("datatable.txt", colClasses=classes)
+
 readLines, for reading lines of text files
+con <- gzfile("words.gz")
+x <- readLines(con, 10)
+writeLines takes a character vector and writes each element one line at a time to a text file.
+
+source, for reading in R code files
 load, for reading in saved workspaces
 
 file() opens a connection to a file
@@ -45,15 +106,13 @@ gzfile() opens a connection to a file compressed with gzip
 bzfile() ............................................ bzip2
 url() opens a connection to a webpage
 
-getwd() to get the current working directory.
+getwd(): get the current working directory.
 
-dir() to list files in current working directory.
+dir(): list files in current working directory.
+str(): compactly display the internal structure of an object
+ls(): list objects
+head(): display top lines
 
-str() to compactly display the internal structure of an object
+------------------------------------------
 
-vector in R is stored column by column.
 
-ifelse()
-apply()
-rep()
-seq()
