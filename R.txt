@@ -13,6 +13,11 @@ You do not need to run "make install" to work with R. For packages,
        and does not replace the default R library path.
 
 
+# To run an R script from linux command line:
+R CMD BATCH file.R
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Everything in R is object. Atomic classes: numeric, logical, integer, character and complex. Numbers in R is generally treated as numeric objects(double precision real numbers). If you explicitly want an integer, you need to specify the L suffix.
 
 : is to create an integer sequence. i.e. 1:20
