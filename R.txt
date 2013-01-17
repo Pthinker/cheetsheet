@@ -120,4 +120,55 @@ head(): display top lines
 
 ------------------------------------------
 
+# for loop:
+for(i in 1:10) {
+    print(i)
+}
+
+# while loop
+z<-5
+while(z>=3 && z<=10) {
+    z<-z+1
+}
+
+# repeat loop: the only way to exit a repeat is to call break
+repeat {
+    break
+}
+
+next is used to skip an iteration of a loop
+
+--------------------------------------------
+
+functions are created using the function() directive and are stored as R object just like anything else. Functions can be passed as arguments to other functions and functions can be nested. The return value of a function is the last expression in the function body.
+
+args(function_name): print function arguments
+
+The ... argument indicate a variable number of arguments that are usually passed on to other functions. 
+(1) ... if often used when extending another function and you don't want to copy the entire argument list of original function
+myplot <- function(x, y, type="1", ...) {
+    plot(x, y, type, ...)
+}
+(2) Generic functions use ... so that extra arguments can be passed to functions.
+(3) ... is also necessary when the number of arguments passed to the function cannot be known in advance
+One catch with ... is that any argument that appear after ... on the argument must be named explicitly and cannot be partially matched.
+
+-------------------------------------------
+
+Loop functions:
+
+lapply: Loop over a list and evaluate a function on each element. lapply always returns a list.
+
+sapply: Same to lapply but try to simply the result. If the result is a list where every element if length 1, then a vector is returned. If the result is a list where every element is a vector of the same length(>1), a matrix is returned. If it cannot figure out, a list is returned. 
+rowSums = apply(x, 1, sum)
+rowMeans = apply(x, 1, mean)
+colSums = apply(x, 2, sum)
+colMeans = apply(x, 2, mean)
+
+apply: apply a function over the margins of an array. It's often used to apply a function to the rows or columns of a matrix. 
+tapply: apply a function over subsets of a vector
+mapply: multivariate version of lapply
+
+An auxilary function split is also useful, particularly in conjunction with lapply.
+
 
