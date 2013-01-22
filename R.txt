@@ -171,4 +171,64 @@ mapply: multivariate version of lapply
 
 An auxilary function split is also useful, particularly in conjunction with lapply.
 
+---------------------------------------------
+# Generating random numbers:
+rnorm: generate random normal variates with a given mean and standard deviation
+dnorm: evaluate the Normal probability density at a point (or vector of points)
+pnorm: evaluate the cumulative distribution function for a Normal distribution
+rpois: generate random Poisson variates with a given rate
+rbinom: generate random binomial variates 
+
+Setting the random number seed with set.seed ensures reproducibility
+
+The sample function draws randomly from a specified set of (scalar) objects allowing you to sample from arbitrary distributions.
+
+---------------------------------------------
+
+# Plotting:
+
+The par function is used to specify global graphics parameters that affect all plots in an R session. These parameters can often be overridden as arguments to specific plotting functions. 
+    pch: the plotting symbol (default in open circle)
+    lty: the line type(default is solid line)
+    lwd: the line width, specified as an integer
+    col: the plotting color, specified as a number, string or hex code
+    las: the orientation of the axis labels on the plot
+    bg: the background color
+    mar: the margin size
+    oma: the outer margin size
+    mfrow: number of plots per row, column (plots are filled row-wise)
+    mfcol: number of plots per row, column (plots are filled column-wise)
+
+plot: make a scatterplot, or other type of plots depending on the class of the object being plotted
+lines: add lines to a plot, given a vector x values and a corresponding vector of y values (or a 2 column matrix). it just connects the dots
+points: add points to a plot
+text: add text labels to a plot using specified x, y coordinates
+title: add annotations to x, y axis labels, title, subtitle, outer margin
+mtext: add arbitrary text to the margins(inner or outer) of the plot
+axis: adding axis ticks/labels
+legend: add legend to plot
+
+The list of devices can be found using ?Devices command
+
+pdf(file = "testRplot.pdf")
+x <- rnorm(100)
+hist(x)
+dev.off()
+
+dev.copy: copy a plot from one device to another
+dev.copy2pdf: copy a plot to a PDF file
+dev.list: show the list of open graphics devices
+dev.next: switch control to the next graphics device on the device list
+dev.set: set control to a specific graphics device
+dev.off: close the current graphics device
+
+R can produce latex-like symbols on a plot for mathematical annotation. Math symbols are "expression" in R and need to be wrapped in the expression function. There is a set list of allowed symbols and this is documented in ?plotmath. 
+
+?par
+?plot
+?plotmath
+?axis
+
+------------------------------------------------------
+
 
