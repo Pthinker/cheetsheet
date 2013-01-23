@@ -14,7 +14,9 @@ You do not need to run "make install" to work with R. For packages,
 
 
 # To run an R script from linux command line:
-R CMD BATCH file.R
+R CMD BATCH file.R #output will be in generated file.Rout file
+or
+Rscript file.R #output to console
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
