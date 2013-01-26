@@ -231,6 +231,36 @@ R can produce latex-like symbols on a plot for mathematical annotation. Math sym
 ?plotmath
 ?axis
 
-------------------------------------------------------
+colors() function lists the names of colors you can use in any plotting function.
+rgb() funtion can be used to product any color via read, green, blue proportions, and color transparency can be added via the alpha parameter to rgb. Transparency can sometimes be used to clasify plots with many points.
+
+--------------------------------------------------
+
+# Dates and times in R
+
+Dates are represented by the Date class, stored internally as the number of days since 1970-01-01
+Times are represented by the POSIXct or the POSIXlt class, stored internally as the number of seconds since 1970-01-01
+
+Dates can be coerced from a character string using the as.Date() function.
+
+# generic functions that work on dates and times
+weekdays() gives the day of the week
+months() gives the month name
+quarters() gives the quarter number("Q1", "Q2", etc)
+
+Times can be coerced from a character string using as.POSIXlt or as.POSIXct function
+
+x <- Sys.time() # x in POSIXct class
+p <- as.POSIXlt(x)
+p$sec
+
+strptime() function can be used to convert string of different format to time
+datestring <- c("January 10, 2012 10:40")
+x <- strptime(datestring, "%B %d, %Y %H:%M")
+?strptime for details
+
+You can use mathematical operations on dates and times and you can do comparisons too.
+
+--------------------------------------------------
 
 

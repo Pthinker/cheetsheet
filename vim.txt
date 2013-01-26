@@ -1,4 +1,8 @@
-paste yanked text to vim command line:
+# paste yanked text to vim command line:
 press Ctrl + r then "
+
+# Go to a specific column:
+in normal mode, type column_number|
+
 
 
