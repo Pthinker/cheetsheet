@@ -30,6 +30,8 @@ c() function is to create vectors of ojects. i.e., x<-c("a","b","c")
 
 vector() function is to create a vector, i.e., x<-vector("numeric", length=10), default to 0.
 
+length() returns the length of a vector.
+
 Every element in a vector need to be in the same class. When different objects are mixed in vector, coerce will happen so that every element in the vector is of the same class.
 
 Objects can be explicitly coerced from one class to another using the as.* function if available. Nonsensical coercion results in NAs.
@@ -260,6 +262,20 @@ x <- strptime(datestring, "%B %d, %Y %H:%M")
 ?strptime for details
 
 You can use mathematical operations on dates and times and you can do comparisons too.
+
+--------------------------------------------------
+
+# Regular expression in R
+
+grep(), grepl(): search for matches of a regular expression/patters in a character vector, either return the indices into the character vector that match, the strings that happen to match, or a TRUE/FALSE vector indicating which element match. By default, grep return indices into the character vector where the regex pattern matches. Setting value=TRUE returns the actual elements of the character vector that match. grepl returns a logical vector indicting which element matches.
+
+regexpr(), gregexpr(): search a character vector for regular expression matches and return the indices of the string where the match begins and the length of the match. regexpr only gives you the first match of the string. gregexpr will give you all of the matches.
+
+regmatches() extracts the matches in the string.
+
+sub(), gsub(): search a character vector for regular expression matches and replace that match with another string
+
+regexec() works like regexpr except it gives you the indices for parenthesized sub-expressions. 
 
 --------------------------------------------------
 
