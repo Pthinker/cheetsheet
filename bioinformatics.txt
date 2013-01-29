@@ -21,6 +21,6 @@ Blast2GO:
             Run:
                 java -Xms3000m -Xmx8000m -jar blast2go.jar -in proteins.xml -v -a -out MyAnnot -d MyAnnot.dat -p b2gPipe.properties
 
-
+--------------------------------------------------
 
 formatdb -i input_file -p T
