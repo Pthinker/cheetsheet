@@ -1,0 +1,81 @@
+Global setup:
+
+Set up git
+    git config --global user.name "David Zhang"
+    git config --global user.email davidzhang.seu@gmail.com
+           
+Next steps:
+    mkdir folder
+    cd folder
+    git init
+    touch README
+    git add README
+    git commit -m 'first commit'
+    git remote add origin git@github.com:caribnow/Facebook-Ads.git
+    git push -u origin master
+                                 
+Existing Git Repo?
+    cd existing_git_repo
+    git remote add origin git@github.com:caribnow/Facebook-Ads.git
+    git push -u origin master
+ 
+
+# Create a branch
+git checkout -b branch_name
+
+
+# init a git project
+git init project_name
+
+git status
+
+# Clone an exisint project
+git clone git-address
+
+# Show branches
+git branch -a
+
+# create a new branch
+git branch branch-name
+
+# switch to a branch
+git checkout branch-name
+
+# Make changes and commit, then push
+git push -u origin branch-name
+
+# Show history code of a file
+git show HEAD~4:./path/to/file
+
+
+
+
+--------------------------------------------------------------
+
+#Mercurial
+
+hg log -r revision_number : view a single revision
+hg log -p : display the content of a change as a unified diff
+
+hg status
+
+hg diff : show modifications
+
+hg tip : display the latest commited changeset
+
+hg incoming : display what changes the hg pull command would pull into the repository, without actually pulling the changes in
+
+hg update: hg pull does not touch the working directory, use hg update command to do this
+
+hg pull -u : pull-then update, shortcut for hg pull; hg update
+
+hg parent: find out what revision the working directory is at
+
+hg update revision_number: update the working directory to a paticular revision; If omit revision_number, update to the tip revision
+
+hg outgoing: display what changes would be pushed into another repository
+
+To have the default location for hg push and hg outgoing be different from those for hg pull and hg incoming, add a default-push entry to the [paths] section of the .hg/hgrc file.
+
+
+
