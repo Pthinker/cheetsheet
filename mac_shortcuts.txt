@@ -4,4 +4,6 @@ close window or tab: command + w
 
 Refresh webpage: command + r
 
+screen shot: command + shift + 4
+
 
