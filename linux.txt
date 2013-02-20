@@ -42,8 +42,10 @@ tar -jtvf file.tar.bz2
 # When file list is large, use cat will fail, need to use find as following:
 find folder -name "*.log" | xargs cat  > fpath
 
-# Remove dead? screen:
-screen -wipe
+######screen
+Remove dead? screen: screen -wipe
+Detached screen: screen -D screen#
+
 
 # Convert eps file to jpg file
 convert -density 100 -antialias -background white -units PixelsPerInch -quality 100 file.eps file.jpg
