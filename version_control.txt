@@ -47,7 +47,8 @@ git push -u origin branch-name
 # Show history code of a file
 git show HEAD~4:./path/to/file
 
-
+# List URLs for the remote
+git remote -v
 
 
 --------------------------------------------------------------
