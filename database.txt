@@ -72,4 +72,6 @@ MySQL:
 Find out which port is mysql using:
 Log into mysql, and type: SHOW GLOBAL VARIABLES LIKE 'PORT';
 
+Change user password:
+mysqladmin -u user password NEWPASSWORD
 
