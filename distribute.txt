@@ -17,6 +17,8 @@ condor_rm -all: remove all submitted jobs on this machine
 
 condor_ssh_to_job job_id
 
+# Display user priority
+condor_userprio
 
 
 SGE:

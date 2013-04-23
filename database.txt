@@ -69,4 +69,7 @@ MySQL:
 4. Command to Start: ./bin/mysqld_safe --defaults-file=/home/wzhang7/my.cnf
 5. Command to Stop:  ./bin/mysqladmin --socket=/tmp/mysql.sock shutdown
 
+Find out which port is mysql using:
+Log into mysql, and type: SHOW GLOBAL VARIABLES LIKE 'PORT';
+
 
