@@ -26,6 +26,7 @@ mkdir /somewhere/postgresql/data
 
 To start PostgreSQL:
 /somewhere/postgresql/bin/postmaster -D /somewhere/postgresql/data or /somewhere/postgresql/bin/postgres -D /somewhere/postgresql/data
+Add -p port_number to use another port number
 
 To create a new database:
 /somewhere/postgresql/bin/createdb dbname
