@@ -76,3 +76,7 @@ Log into mysql, and type: SHOW GLOBAL VARIABLES LIKE 'PORT';
 Change user password:
 mysqladmin -u user password NEWPASSWORD
 
+# delete a table with foreign key constrain
+SET foreign_key_checks = 0;
+drop table t;
+SET foreign_key_checks = 1;
