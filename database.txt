@@ -80,3 +80,6 @@ mysqladmin -u user password NEWPASSWORD
 SET foreign_key_checks = 0;
 drop table t;
 SET foreign_key_checks = 1;
+
+# create a database with utf-8 encoding
+CREATE DATABASE mydb DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
