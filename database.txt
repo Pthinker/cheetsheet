@@ -83,3 +83,4 @@ SET foreign_key_checks = 1;
 
 # create a database with utf-8 encoding
 CREATE DATABASE mydb DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
