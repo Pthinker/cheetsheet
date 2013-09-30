@@ -1,0 +1,9 @@
+# collaborating with others on heroku
+https://devcenter.heroku.com/articles/sharing
+https://github.com/ddollar/heroku-accounts
+
+# change app name on heroku dashboard, then on terminal
+git remote rm heroku
+git remote add heroku git@heroku.com:yourappname.git
+
+

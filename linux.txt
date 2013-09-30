@@ -1,3 +1,9 @@
+"!" can be used with any command to invoke previous run of that command.
+
+Read more: http://javarevisited.blogspot.com/2011/03/10-find-command-in-unix-examples-basic.html#ixzz2YuNeznNo
+
+grep -c "search_term" file (print number of search_term in file)
+
 sed:
 sed 's/reg of content to be substituted/reg of content to substitute/' < oldfile > newfile               /g: global replacement
 
@@ -7,6 +13,11 @@ tr '[a-z]' '[A-Z]'
 
 
 sort
+sort -n (sorting based on numeric value of string)
+sort -k2 (sort by some column)
+ps -ef | sort -nk2 (sort based upon numeric value of PID)
+sort -r option (reverse sorting)
+sort -u (produce sorted output without duplicates, or using sort|uniq)
 
 uniq
 
@@ -41,6 +52,15 @@ tar -jtvf file.tar.bz2
 
 # When file list is large, use cat will fail, need to use find as following:
 find folder -name "*.log" | xargs cat  > fpath
+
+xargs can be used to do whatever witch each file found by find command
+find . -name "*.tmp" -print | xargs rm –f (delete all  .tmp files)
+
+
+find . -mtime 1  (find all the files modified exact 1 day)
+find . -mtime +1  (find all the files modified more than 1 day)
+find . -mtime -1  (find all the files modified less than 1 day)
+
 
 ######screen
 Remove dead? screen: screen -wipe

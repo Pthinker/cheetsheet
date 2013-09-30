@@ -84,3 +84,16 @@ SET foreign_key_checks = 1;
 # create a database with utf-8 encoding
 CREATE DATABASE mydb DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
+# Load .sql file to mysql
+mysql -uuser -ppwd < file.sql
+
+# dump mysql database to sql file
+mysqldump -uuser -ppwd --databases db_name1 db_name2 ... > file.sql
+mysqldump -uuser -ppwd db_name [table_name1, table_name2, ...] > file.sql
+
+# dump to csv file
+SELECT * INTO OUTFILE 'result.csv'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM my_table;
+
