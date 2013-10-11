@@ -1,3 +1,9 @@
+# Getting started with Django on heroku
+https://devcenter.heroku.com/articles/getting-started-with-django
+
+# see app logs
+heroku logs
+
 # collaborating with others on heroku
 https://devcenter.heroku.com/articles/sharing
 https://github.com/ddollar/heroku-accounts
@@ -6,4 +12,21 @@ https://github.com/ddollar/heroku-accounts
 git remote rm heroku
 git remote add heroku git@heroku.com:yourappname.git
 
+# dump a local postgresql db table data and import into heroku
+pg_dump -a -t table_name db_name > table_data.sql
+heroku pg:psql --app appname < table_data.sql
+
+
+
+# Django
+
+# South
+# first migration
+python manage.py schemamigration app_name --initial
+
+# after making changes
+python manage.py schemamigration app_name --auto
+python manage.py migrate app_name
+# after push to heroku
+heroku run python manage.py migrate search
 
