@@ -97,3 +97,7 @@ FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 FROM my_table;
 
+# Drop all the tables in a database
+mysqldump -uusername -ppwd --no-data dbname | grep ^DROP | mysql -uusername -ppwd dbname
+
+
