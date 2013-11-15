@@ -22,12 +22,6 @@ sort -u (produce sorted output without duplicates, or using sort|uniq)
 uniq
 
 
-Remove 
-:%s/^M//g
-To get the ^M hold the control key, press V then M (Both while holding the
-control key) and the ^M will appear. This will find all occurances and replace
-them with nothing. To replace to newline, use :%s/^M/\r/g
-
 split
 
 join

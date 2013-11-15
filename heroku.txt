@@ -28,5 +28,6 @@ python manage.py schemamigration app_name --initial
 python manage.py schemamigration app_name --auto
 python manage.py migrate app_name
 # after push to heroku
-heroku run python manage.py migrate search
+heroku run python manage.py migrate app_name
+
 
