@@ -67,4 +67,10 @@ change to next window in list: Ctrl + a + n
 # Convert eps file to jpg file
 convert -density 100 -antialias -background white -units PixelsPerInch -quality 100 file.eps file.jpg
 
+<<<<<<< HEAD
+=======
+# see logs of cron jobs
+grep CRON /var/log/syslog
+
+>>>>>>> c8eccf1f5f12349172066042bc5ec3038847c212
 

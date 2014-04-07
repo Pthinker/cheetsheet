@@ -1,0 +1,30 @@
+# Delete branch locally and remotely
+git branch -D branchname
+git push origin --delete branchname
+
+# stash
+git stash
+git stash drop
+
+# branch
+git checkout -b branch_name
+...make some changes...
+...notice master has been updated...
+...commit changes to branch_name...
+git checkout master
+git pull
+...bring those changes back into branch_name...
+git checkout branch_name
+git rebase master
+...make some more changes...
+...commit them to develop...
+...merge them into master...
+git checkout master
+git pull 
+git merge branch_name
+
+# remove tracking file/folder in git but not locally (in disk)
+git rm --cached filename
+
+# remove a remote
+git romote rm remote_name
