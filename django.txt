@@ -1,0 +1,12 @@
+# Deploy django project to apache in ubuntu
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-wsgi
+
+generate app.wsgi and app.conf and put app.wsgi into /var/www/app folder, put app.conf into /etc/apache2/sites-available folder
+
+Use the following command to enable app site
+sudo a2ensite app
+
+the follow the output and restart apache
+
