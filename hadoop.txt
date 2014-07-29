@@ -1,0 +1,26 @@
+# hadoop
+
+hadoop fs ls /
+
+hadoop fs -copyFromLocal local_fpath hdfs_fpath  #copy file from local to hdfs
+hadoop fs -copyToLocal hdfs_fpath local_fpath  #copy file from hdfs to local
+
+hadoop fs -rmr hdfs_fpath  # delete a hdfs folder
+
+
+
+# hive
+
+set hive.cli.print.current.db=true  # show current database in command prompt
+
+hive -i init_file  #start hive with an initialization file
+
+hive -f query.hql
+hive -e "selec * from table_name"
+
+hive -S # suppress info messages
+
+alter table old_table rename to new_table; # rename table
+
+
+

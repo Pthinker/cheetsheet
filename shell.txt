@@ -1,0 +1,4 @@
+$# #number of arguments
+$@ #what parameters were passed
+$? #whether last command executed successfully, 0 means yes
+
