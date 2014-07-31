@@ -52,6 +52,8 @@ pg_dump -t 'table_name' db_name > dump.sql
 # import a sql file to a database
 psql -f dump.sql -d db_name
 
+# create a db user
+createuser -d -P username
 
 
 MySQL:

@@ -22,5 +22,7 @@ hive -S # suppress info messages
 
 alter table old_table rename to new_table; # rename table
 
-
+# delete all tables/views in a database
+hive -e 'use db;show tables'|xargs -I '{}' hive -e 'use db;drop table {}'
+hive -e 'use db;show tables'|xargs -I '{}' hive -e 'use db;drop view {}'
 

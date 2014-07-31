@@ -6,4 +6,6 @@ Refresh webpage: command + r
 
 screen shot: command + shift + 4
 
+# Eclipse
+command + Shift + R    #search file
 
