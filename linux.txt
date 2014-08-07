@@ -43,6 +43,8 @@ tar -ztvf file.tar.gz
 #List the contents of a tar.bz2 file:
 tar -jtvf file.tar.bz2
 
+# list contents of .gz file
+zcat file.gz
 
 # When file list is large, use cat will fail, need to use find as following:
 find folder -name "*.log" | xargs cat  > fpath
