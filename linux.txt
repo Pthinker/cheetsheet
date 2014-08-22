@@ -78,3 +78,7 @@ date +%s
 date -d "$(date +%Y-%m-%d)" +%s
 # get previous day's epoch
 date -d "1 day ago $(date +%Y-%m-%d)" +%s
+
+
+type ctrl + R in command line to search command history
+
