@@ -88,6 +88,7 @@ CREATE DATABASE mydb DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
 # Load .sql file to mysql
 mysql -uuser -ppwd < file.sql
+mysql -uuser -ppwd --database db_name < file.sql
 
 # dump mysql database to sql file
 mysqldump -uuser -ppwd --databases db_name1 db_name2 ... > file.sql

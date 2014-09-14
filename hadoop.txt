@@ -26,3 +26,20 @@ alter table old_table rename to new_table; # rename table
 hive -e 'use db;show tables'|xargs -I '{}' hive -e 'use db;drop table {}'
 hive -e 'use db;show tables'|xargs -I '{}' hive -e 'use db;drop view {}'
 
+# set variables in hive scripts
+hive> set CURRENT_DATE='2012-09-16';
+hive> select * from foo where day >= '${hiveconf:CURRENT_DATE}'
+
+similarly, you could pass on command line:
+% hive -hiveconf CURRENT_DATE='2014-09-08' -f test.hql
+
+To see all the available variables, from the command line, run
+% hive -e 'set;'
+or from the hive prompt, run
+hive> set;
+
+# load data in file to hive table
+create table test (query) row format delimited fields terminated by ',' stored as textfile;
+LOAD DATA [local] inpath 'data_file_path' [overwrite] into table test;
+
+
