@@ -32,4 +32,7 @@ git romote rm remote_name
 # undo a local commit
 git reset --soft HEAD~1
 
+# view changes of a file
+gitk fpath
+
 
