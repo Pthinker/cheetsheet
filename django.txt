@@ -10,3 +10,9 @@ sudo a2ensite app
 
 the follow the output and restart apache
 
+
+# migration
+list migrations of an app: python manage.py migrate -l app_name
+migrate to a specific migration: python manage.py migrate app_name migration_name
+
+
