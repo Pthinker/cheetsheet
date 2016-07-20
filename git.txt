@@ -44,6 +44,12 @@ git stash
 git pull --rebase
 git stash pop
 
+# synchronize with origin repo after fork		
+add upstream branch:  git remote add upstream $repo_url		
+view remotes: git remote -v		
+git fetch upstream		
+git checkout master		
+git merge upstream/master
 
 # synchronize with origin repo after fork		
 add upstream branch:  git remote add upstream $repo_url		
