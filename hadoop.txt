@@ -1,6 +1,6 @@
 # hadoop
 
-hadoop fs ls /
+hadoop fs -ls /
 
 hadoop fs -copyFromLocal local_fpath hdfs_fpath  #copy file from local to hdfs
 hadoop fs -copyToLocal hdfs_fpath local_fpath  #copy file from hdfs to local

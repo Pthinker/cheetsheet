@@ -55,6 +55,9 @@ psql -f dump.sql -d db_name
 # create a db user
 createuser -d -P username
 
+# list users/roles
+SELECT rolname FROM pg_roles;
+
 
 MySQL:
 
