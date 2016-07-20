@@ -1,0 +1,6 @@
+#virtualenvwrapper
+mkvirtualenv env
+add2virtualenv .
+setvirtualenvproject
+
+
