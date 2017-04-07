@@ -1,0 +1,5 @@
+Access hie table data with Pig:
+pig -useHCatalog test.pig
+A = LOAD 'groups' USING org.apache.hcatalog.pig.HCatLoader();
+
+
