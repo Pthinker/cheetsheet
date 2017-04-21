@@ -10,6 +10,8 @@ hadoop fs -rmr hdfs_fpath  # delete a hdfs folder
 
 
 # hive
+delete all rows in a table:
+truncate table table_name;
 
 set hive.cli.print.current.db=true  # show current database in command prompt
 
