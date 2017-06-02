@@ -44,4 +44,6 @@ hive> set;
 create table test (query) row format delimited fields terminated by ',' stored as textfile;
 LOAD DATA [local] inpath 'data_file_path' [overwrite] into table test;
 
+# use virtualenv in hive
+http://www.florianwilhelm.info/2016/10/python_udf_in_hive/
 
