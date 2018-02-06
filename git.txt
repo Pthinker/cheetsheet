@@ -27,7 +27,7 @@ git merge branch_name
 git rm --cached filename
 
 # remove a remote
-git romote rm remote_name
+git remote rm remote_name
 
 # undo a local commit
 git reset --soft HEAD~1
