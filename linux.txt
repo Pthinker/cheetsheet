@@ -66,6 +66,8 @@ Detach from curren screen: Ctrl + a + d
 create new window:  Ctrl + a + c
 change to next window in list: Ctrl + a + p
 change to next window in list: Ctrl + a + n
+list screen sessions: screen -ls
+connect to screen session: screen -r session-id
 
 # Convert eps file to jpg file
 convert -density 100 -antialias -background white -units PixelsPerInch -quality 100 file.eps file.jpg
